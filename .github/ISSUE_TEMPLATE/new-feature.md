@@ -1,6 +1,6 @@
 ---
 name: New Feature
-about: Suggest an idea for this project
+about: Record requirements before working on feature.
 title: ''
 labels: ''
 assignees: ''
