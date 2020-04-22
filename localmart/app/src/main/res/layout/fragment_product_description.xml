@@ -10,6 +10,10 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,7 +31,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/str_tvProductName"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                android:textAlignment="center"
+                android:textColor="#003FFF"
+                android:textSize="36sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -49,7 +56,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Decription"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#003FFF"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -72,7 +81,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="0"
             android:text="Storage"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#003FFF"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:id="@+id/detailSelect"
@@ -106,7 +117,7 @@
                 android:id="@+id/tvPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight=".25"
                 android:fontFamily="sans-serif-condensed-light"
                 android:text="$ 1099.0"
                 android:textAlignment="textStart"
@@ -121,10 +132,12 @@
 
             <Button
                 android:id="@+id/btnContactSeller"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:background="@android:color/holo_orange_light"
-                android:text="Contact Seller" />
+                android:background="#003FFF"
+                android:gravity="center"
+                android:text="Contact Seller"
+                android:textColor="#FFFF" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
