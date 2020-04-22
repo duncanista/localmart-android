@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.category_item.view.*
+import mx.itesm.localmart.ListenerRecycler
 import mx.itesm.localmart.R
 
 class CategoryAdapter (private val context: Context, var arrCategories: Array<Category>) :
