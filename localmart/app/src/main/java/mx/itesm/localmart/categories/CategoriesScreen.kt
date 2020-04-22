@@ -1,3 +1,4 @@
+
 package mx.itesm.localmart.categories
 
 import androidx.appcompat.app.AppCompatActivity
@@ -29,8 +30,6 @@ class CategoriesScreen : AppCompatActivity() {
         val divisor = DividerItemDecoration(this, layout.orientation)
         recyclerCategory.addItemDecoration(divisor)
     }
-
-
 
 
 }

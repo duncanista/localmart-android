@@ -27,11 +27,6 @@ class MainActivity : AppCompatActivity() {
         val navController = Navigation.findNavController(this, R.id.nav_host_fragment)
 
         NavigationUI.setupWithNavController(bottomNavigationView, navController)
-      
-        btnTest.setOnClickListener {
-            val intent = Intent(this, ProductListScreen::class.java)
-            startActivity(intent)
-        }
 
     }
 }
