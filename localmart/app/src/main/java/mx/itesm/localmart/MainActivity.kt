@@ -14,6 +14,7 @@ import androidx.navigation.ui.NavigationUI
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import mx.itesm.localmart.categories.CategoriesScreen
+import mx.itesm.localmart.product.ProductListScreen
 
 
 class MainActivity : AppCompatActivity() {
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupWithNavController(bottomNavigationView, navController)
       
         btnTest.setOnClickListener {
-            val intent = Intent(this, CategoriesScreen::class.java)
+            val intent = Intent(this, ProductListScreen::class.java)
             startActivity(intent)
         }
 

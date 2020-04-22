@@ -1,4 +1,4 @@
-package mx.itesm.localmart.categories
+package mx.itesm.localmart
 
 interface ListenerRecycler
 {
