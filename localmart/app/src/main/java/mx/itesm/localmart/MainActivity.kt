@@ -1,5 +1,6 @@
 package mx.itesm.localmart
 
+
 import android.accounts.Account
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +13,8 @@ import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
+import mx.itesm.localmart.categories.CategoriesScreen
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,6 +26,12 @@ class MainActivity : AppCompatActivity() {
         val navController = Navigation.findNavController(this, R.id.nav_host_fragment)
 
         NavigationUI.setupWithNavController(bottomNavigationView, navController)
+      
+        btnTest.setOnClickListener {
+            val intent = Intent(this, CategoriesScreen::class.java)
+            startActivity(intent)
+        }
 
     }
 }
+
