@@ -33,7 +33,10 @@ class CategoryAdapter (private val context: Context, var arrCategories: Array<Ca
     override fun onBindViewHolder(holder: CategoryItem, position: Int) {
         val category = arrCategories[position]
         holder.rowView.tvProfile.text = "${category.name}"
-    }
 
+        holder.rowView.setOnClickListener {
+            listener?.itemClicked(position)
+        }
+    }
 
 }

@@ -9,9 +9,13 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_search.*
 import mx.itesm.localmart.R
 import mx.itesm.localmart.categories.CategoriesScreen
+import mx.itesm.localmart.product.ProductListScreen
+
+
 
 
 class SearchFragment : Fragment() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +41,16 @@ class SearchFragment : Fragment() {
                 )
             )
         })
+
+        btnProductList.setOnClickListener(View.OnClickListener {
+            startActivity(
+                Intent(
+                    activity,
+                    ProductListScreen::class.java
+                )
+            )
+        })
+        
         }
 
     }

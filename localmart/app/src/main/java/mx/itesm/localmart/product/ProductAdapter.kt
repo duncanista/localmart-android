@@ -35,6 +35,7 @@ class ProductAdapter (private val context: Context, var arrProducts: Array<Produ
         val product = arrProducts[position]
         holder.rowView.tvProductListName.text = "${product.name}"
         holder.rowView.tvPrice.text = "${product.price}"
+
     }
 
 
