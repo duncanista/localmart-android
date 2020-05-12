@@ -13,11 +13,11 @@ class LoginScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_screen)
 
-        button.setOnClickListener{
+        btnLogin.setOnClickListener{
             startActivity(Intent(this, MainActivity::class.java))
         }
 
-        textView2.setOnClickListener{
+        tvSignUp.setOnClickListener{
             startActivity(Intent(this, SignupScreen::class.java))
         }
     }
