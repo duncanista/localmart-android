@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "433981902780",
+    "firebase_url": "https://localmarto.firebaseio.com",
+    "project_id": "localmarto",
+    "storage_bucket": "localmarto.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:433981902780:android:0ee3ef93101966635165b9",
+        "android_client_info": {
+          "package_name": "mx.itesm.localmart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "433981902780-2m80ht4ol0dqi55ir0rp09d1h1talfij.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mx.itesm.localmart",
+            "certificate_hash": "7939dbfe4872ccce18268b810cc289a5de6a4ccd"
+          }
+        },
+        {
+          "client_id": "433981902780-82kl4b9afoibts1qcrj5fi77v1eol20t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMgyw9fYU18oY_EZAFscSBrO3OIImdsnw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "433981902780-82kl4b9afoibts1qcrj5fi77v1eol20t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
