@@ -12,7 +12,7 @@ class Validation {
     }
 
     fun isPhone(phone: String): Boolean {
-        return "[0-9]".toRegex().matches(phone)
+        return ("[0-9]+").toRegex().matches(phone)
     }
 
     fun nameContainsLastname(name: String): Boolean{

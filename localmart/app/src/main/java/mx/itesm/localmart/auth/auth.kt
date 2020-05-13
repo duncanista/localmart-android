@@ -16,12 +16,12 @@ class Auth{
 
     fun checkSignUpFields(email: String, password: String, confirmPassword: String, name: String, phone: String): Boolean{
         return (email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty() || name.isEmpty() || phone.isEmpty()
-                || !Validate.atLeastOfSize6(password) || !Validate.isPhone(phone) || !Validate.isPhone(phone) || !Validate.nameContainsLastname(name)
+                || !Validate.atLeastOfSize6(password) || !Validate.isEmail(email) || !Validate.isPhone(phone)  || !Validate.nameContainsLastname(name)
                 || !checkPasswords(password, confirmPassword))
     }
 
     fun checkPasswords(password: String, confirmPassword: String): Boolean{
-        return password === confirmPassword
+        return password == confirmPassword
     }
 
 
