@@ -6,6 +6,7 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity__account.*
 import mx.itesm.localmart.R
 import mx.itesm.localmart.account.communities.CommunitiesScreen
+import mx.itesm.localmart.account.helplegal.HelpLegalScreen
 import mx.itesm.localmart.account.profile.ProfileScreen
 import mx.itesm.localmart.account.settings.SettingsScreen
 
@@ -24,6 +25,9 @@ class AccountScreen : AppCompatActivity() {
         }
         imgArrow3.setOnClickListener{
             startActivity(Intent(this, SettingsScreen::class.java))
+        }
+        imgArrow4.setOnClickListener{
+            startActivity(Intent(this, HelpLegalScreen::class.java))
         }
     }
 }

@@ -3,6 +3,7 @@
     <color name="colorPrimary">#3817F9</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
     <color name="address">#2F7092</color>
     <color name="followers">#0D5D98</color>
     <color name="headings">#3797CF</color>
@@ -15,5 +16,7 @@
     <color name="grey">#E5E5E5</color>
 
     <color name="white">#FFFFFF</color>
+
     <color name="colorGrey">#707070</color>
+>>>>>>> 4a18d01f5725b11739e0ca96f4f93c403b19fd83
 </resources>
