@@ -24,6 +24,7 @@ class ProductListScreen : AppCompatActivity(), ListenerRecycler {
 
     var productAdapter: ProductAdapter? = null
     val array = mutableListOf<Product>()
+    var selectedCategory: String = ""
 
 
 
@@ -33,7 +34,8 @@ class ProductListScreen : AppCompatActivity(), ListenerRecycler {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_list_screen)
 
-        val category = intent.getStringExtra("Category")
+        selectedCategory = intent.getStringExtra("Category")
+        tvSelectedCategory.text = selectedCategory
 
     }
 
@@ -41,7 +43,7 @@ class ProductListScreen : AppCompatActivity(), ListenerRecycler {
         super.onStart()
         getProducts()
 
-}
+    }
     private fun getProducts() {
 
         var firestore = FirebaseFirestore.getInstance()
@@ -60,7 +62,7 @@ class ProductListScreen : AppCompatActivity(), ListenerRecycler {
                             val price = "$ %.2f".format(document.data["price"].toString().toDouble())
                             val category = document.data["category"].toString()
                             var product = Product(name, price, image, description, seller, sold, category)
-                            array.add(product)
+                            if (category == selectedCategory) {array.add(product)}
                         }
                     configureRecycler()
 
@@ -78,6 +80,7 @@ class ProductListScreen : AppCompatActivity(), ListenerRecycler {
         )
         productAdapter?.listener = this
         recyclerProductList.adapter = productAdapter
+
     }
 
     override fun itemClicked(position: Int){

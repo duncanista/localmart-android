@@ -43,11 +43,13 @@ class CategoriesFragment : Fragment(), ListenerRecycler {
             activity!!,
             Category.arrCategories
         )
+        categoryAdapter?.listener = this
         recyclerCategory.adapter = categoryAdapter
 
         val divisor = DividerItemDecoration(activity, layout.orientation)
         recyclerCategory.addItemDecoration(divisor)
     }
+
 
 
     override fun itemClicked(position: Int) {
