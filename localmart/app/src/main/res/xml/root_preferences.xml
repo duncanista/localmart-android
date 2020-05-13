@@ -1,0 +1,28 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:title="General Settings">
+
+    </PreferenceCategory>
+    <CheckBoxPreference
+        android:layout_width="match_parent"
+        android:defaultValue="false"
+        android:key="check_box_preference_1"
+        android:title="Night Mode" />
+    <PreferenceCategory android:title="Seguridad">
+
+        <EditTextPreference
+            android:defaultValue="Default value"
+            android:key="edit_text_preference_1"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Change Password" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="switch_preference_1"
+            android:title="Show phone number" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Log Out">
+
+    </PreferenceCategory>
+</PreferenceScreen>

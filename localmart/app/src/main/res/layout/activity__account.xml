@@ -5,12 +5,16 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="account.AccountFragment" >
+    tools:context=".account.profile.ProfileScreen" >
 
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +33,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/str_tvAccountTitle"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#003FFF"
+                android:textSize="36sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
     </LinearLayout>
@@ -61,13 +68,14 @@
                 app:srcCompat="@mipmap/ic_launcher_round" />
 
             <TextView
-                android:id="@+id/tvProfile"
+                android:id="@+id/tvCommunity"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".8"
                 android:text="Profile"
-                android:textAlignment="center"
+                android:textAlignment="textStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="#003FFF"
                 android:textSize="24sp" />
 
             <ImageView
@@ -100,8 +108,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight=".8"
                 android:text="Communities"
-                android:textAlignment="center"
+                android:textAlignment="textStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="#003FFF"
                 android:textSize="24sp" />
 
             <ImageView
@@ -134,8 +143,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight=".8"
                 android:text="Settings"
-                android:textAlignment="center"
+                android:textAlignment="textStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="#003FFF"
                 android:textSize="24sp" />
 
             <ImageView
@@ -168,8 +178,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight=".8"
                 android:text="Help/Legal"
-                android:textAlignment="center"
+                android:textAlignment="textStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="#003FFF"
                 android:textSize="24sp" />
 
             <ImageView

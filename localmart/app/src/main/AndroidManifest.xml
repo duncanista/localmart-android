@@ -9,10 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".login.SignupScreen"/>
-        <activity android:name=".MainActivity"/>
+        <activity
+            android:name=".account.settings.SettingsScreen"
+            android:label="@string/title_activity_settings_screen"></activity>
+        <activity android:name=".account.communities.CommunitiesScreen" />
+        <activity android:name=".account.AccountScreen" />
+        <activity android:name=".account.profile.ProfileScreen" />
+        <activity android:name=".login.SignupScreen" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".search.SearchFragment" />
-        <activity android:name=".account.AccountFragment" />
         <activity android:name=".product.ProductListScreen" />
         <activity android:name=".categories.CategoriesScreen" />
         <activity android:name=".login.LoginScreen">
