@@ -1,6 +1,6 @@
 package mx.itesm.localmart.product
 
-data class Product (var name: String, var price: String, var imageUri: String) : Comparable<Product>
+class Product (var name: String, var price: String, var imageUri: String) : Comparable<Product>
 {
     override fun compareTo(other: Product): Int {
         return name.compareTo(other.name)
