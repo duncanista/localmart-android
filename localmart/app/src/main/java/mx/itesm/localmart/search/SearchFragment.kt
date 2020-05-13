@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_search.*
 import mx.itesm.localmart.R
 import mx.itesm.localmart.categories.CategoriesScreen
+import mx.itesm.localmart.product.AddProductActivity
 import mx.itesm.localmart.product.ProductListScreen
 
 
@@ -27,7 +28,6 @@ class SearchFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-
         return inflater.inflate(R.layout.fragment_search, container, false)
     }
 
@@ -37,7 +37,8 @@ class SearchFragment : Fragment() {
             startActivity(
                 Intent(
                     activity,
-                    CategoriesScreen::class.java
+                    AddProductActivity::class.java
+                    //CategoriesScreen::class.java
                 )
             )
         })
@@ -49,6 +50,7 @@ class SearchFragment : Fragment() {
                     ProductListScreen::class.java
                 )
             )
+
         })
         
         }
