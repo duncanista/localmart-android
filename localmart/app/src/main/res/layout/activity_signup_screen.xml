@@ -6,6 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".auth.SignupScreen">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/containerProgress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+        <ProgressBar
+            android:id="@+id/circleProgressIndicator"
+            style="@android:style/Widget.Holo.ProgressBar.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:indeterminate="false"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.37" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/containerSignUp"
+        android:visibility="visible"
+        >
+
     <TextView
         android:id="@+id/textViewSignUpTitle"
         android:layout_width="wrap_content"
@@ -49,7 +81,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutName"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:hint="NAME"
+        android:hint="NAME and LASTNAME"
         android:textColorHint="@color/colorGrey"
         app:boxStrokeColor="@color/colorGrey"
         android:layout_width="0dp"
@@ -62,6 +94,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewCreateYourAccount">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="14sp" />
@@ -83,6 +116,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutName">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="14sp" />
@@ -104,6 +138,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmail">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="14sp" />
@@ -125,6 +160,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPhone">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="14sp" />
@@ -146,6 +182,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPassword">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputConfirmPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="14sp" />
@@ -185,5 +222,6 @@
             android:text="Log In"
             android:textStyle="bold" />
     </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
