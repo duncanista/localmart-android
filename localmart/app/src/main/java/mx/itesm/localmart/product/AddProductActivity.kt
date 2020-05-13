@@ -74,9 +74,10 @@ class AddProductActivity : AppCompatActivity() {
             val productName = etName.text.toString()
             val productDescription = etDescription.text.toString()
             val price = etPrice.text.toString().toFloat()
+            val category = spinnerCategories.selectedItem.toString()
 
             val imageUri = uploadImage()
-            val newProduct = NewProduct(userUid, productName, productDescription, false, imageUri, price)
+            val newProduct = NewProduct(userUid, productName, productDescription, false, imageUri, price, category)
 
             firestore.collection("products")
                 .add(newProduct)
@@ -143,4 +144,5 @@ class AddProductActivity : AppCompatActivity() {
 
 }
 
-data class NewProduct(var seller: String, var name: String, var description: String, var sold: Boolean, var image: String, var price: Float)
+data class NewProduct(var seller: String, var name: String, var description: String,
+                      var sold: Boolean, var image: String, var price: Float, var category: String)

@@ -33,6 +33,7 @@ class ProductListScreen : AppCompatActivity(), ListenerRecycler {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_list_screen)
 
+        val category = intent.getStringExtra("Category")
 
     }
 
@@ -57,7 +58,8 @@ class ProductListScreen : AppCompatActivity(), ListenerRecycler {
                             val description = document.data["description"].toString()
                             val sold = document.data["sold"].toString().toBoolean()
                             val price = "$ %.2f".format(document.data["price"].toString().toDouble())
-                            var product = Product(name, price, image, description, seller, sold)
+                            val category = document.data["category"].toString()
+                            var product = Product(name, price, image, description, seller, sold, category)
                             array.add(product)
                         }
                     configureRecycler()

@@ -1,6 +1,7 @@
 package mx.itesm.localmart.categories
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,8 @@ import kotlinx.android.synthetic.main.activity_categories_screen.*
 import kotlinx.android.synthetic.main.activity_main.*
 import mx.itesm.localmart.ListenerRecycler
 import mx.itesm.localmart.R
+import mx.itesm.localmart.product.ProductDescriptionActivity
+import mx.itesm.localmart.product.ProductListScreen
 
 
 /**
@@ -48,7 +51,12 @@ class CategoriesFragment : Fragment(), ListenerRecycler {
 
 
     override fun itemClicked(position: Int) {
-        TODO("Not yet implemented")
+        println("ITEM CLICKED:")
+        println(position.toString())
+        val intProductList = Intent(activity, ProductListScreen::class.java)
+        val clickedCategory = Category.arrCategories[position].name
+        intProductList.putExtra("Category", clickedCategory)
+        startActivity(intProductList)
     }
 
 }
