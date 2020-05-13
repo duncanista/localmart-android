@@ -12,6 +12,7 @@
         <activity android:name=".auth.SignupScreen"/>
         <activity android:name=".MainActivity"/>
         <activity android:name=".account.settings.SettingsScreen" />
+        <activity android:name=".product.AddProductActivity" />
         <activity android:name=".account.communities.CommunitiesScreen" />
         <activity android:name=".account.AccountScreen" />
         <activity android:name=".account.profile.ProfileScreen" />

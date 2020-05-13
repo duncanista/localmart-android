@@ -8,19 +8,13 @@ class Category (val name: String) : Comparable<Category>
 
     companion object {
         val arrCategories = arrayOf(
-            Category("Clothes"),
-            Category("Crafts"),
+            Category("Arts & Crafts"),
+            Category("Clothing and Accessories"),
             Category("Electronics"),
             Category("Food"),
             Category("Services"),
-            Category("Test"),
-            Category("Test"),
-            Category("Test"),
-            Category("Test"),
-            Category("Test"),
-            Category("Test"),
-            Category("Test"),
-            Category("Test")
-            )
+            Category("Video games"),
+            Category("Other")
+        )
     }
 }
