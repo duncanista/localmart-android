@@ -70,8 +70,6 @@ class ProductListScreen : AppCompatActivity() {
                         recyclerProductList.adapter = productAdapter
                     }
                 }
-
-
     }
 
 
