@@ -90,22 +90,104 @@
                 android:text="$ 1099.0"
                 android:textAlignment="textStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btnContactSeller"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="#003FFF"
+            android:gravity="center"
+            android:text="Contact Seller"
+            android:textColor="#FFFF" />
 
         <LinearLayout
-            android:id="@+id/contact"
+            android:id="@+id/frameLayout5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight=".25">
+            android:layout_weight="0"
+            tools:context=".ContactFragment">
 
-            <Button
-                android:id="@+id/btnContactSeller"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:background="#003FFF"
-                android:gravity="center"
-                android:text="Contact Seller"
-                android:textColor="#FFFF" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imgProfilePicture"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".25"
+                        android:src="@drawable/ic_account_circle_black_24dp" />
+
+                    <TextView
+                        android:id="@+id/tvSellerName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".75"
+                        android:fontFamily="sans-serif-light"
+                        android:text="John Doe"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imgPhone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".25"
+                        android:src="@android:drawable/ic_menu_call" />
+
+                    <TextView
+                        android:id="@+id/tvSellerPhoneNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".75"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center|left"
+                        android:text="55 5555 5555"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".25"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".75"
+                        android:src="@android:drawable/sym_action_email"
+                        app:srcCompat="@android:drawable/ic_dialog_email" />
+
+                    <TextView
+                        android:id="@+id/tvSellerEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".25"
+                        android:fontFamily="sans-serif-light"
+                        android:text="sample@gmail.com"
+                        android:textAlignment="textStart"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
