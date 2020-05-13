@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_signup_screen.*
 import mx.itesm.localmart.MainActivity
 import mx.itesm.localmart.R
@@ -22,6 +23,7 @@ class SignupScreen : AppCompatActivity() {
     private lateinit var confirmPassword: String
     private lateinit var nameInput: String
     private lateinit var phone: String
+    val firestore = FirebaseFirestore.getInstance()
 
     public override fun onStart() {
         super.onStart()
@@ -52,10 +54,17 @@ class SignupScreen : AppCompatActivity() {
 
                 Api.Auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
                     if(task.isSuccessful) {
-                        var uid = Api.Auth.currentUser?.uid.toString()
+                        val uid = Api.Auth.currentUser?.uid.toString()
                         println(uid)
-                        val currentUser = Auth.fbAuth?.currentUser
-                        Log.d("USER", uid)
+                        val currentUser = Api.Auth.currentUser
+                        println("---------- A USER WAS CREATED $uid")
+
+                        firestore.collection("users").document(uid).set(user).addOnSuccessListener {
+                            println("-------- Succesfully created a fucking user")
+                        }.addOnFailureListener {
+                            println("-------- user wasnt fucking created ma nigga")
+                        }
+
                         launchApp(currentUser)
                     }
                 }
