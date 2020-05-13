@@ -54,7 +54,7 @@
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:text="Decription"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="#003FFF"
@@ -78,7 +78,7 @@
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:layout_weight="0"
             android:text="Storage"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
