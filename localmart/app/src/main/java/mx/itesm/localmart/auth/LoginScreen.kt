@@ -13,6 +13,7 @@ import mx.itesm.localmart.utils.Validation
 class LoginScreen : AppCompatActivity() {
 
     private val Auth: Auth = Auth()
+    private val Validate: Validation = Validation()
     private lateinit var email: String
     private lateinit var password: String
 
@@ -29,6 +30,9 @@ class LoginScreen : AppCompatActivity() {
         buttonLogin.setOnClickListener {
             email = textInputEmail.text.toString()
             password = textInputPassword.text.toString()
+
+            checkErrors()
+
             if(!Auth.checkLogInFields(email, password)){
 
                 containerLogin.visibility = View.INVISIBLE
@@ -39,13 +43,11 @@ class LoginScreen : AppCompatActivity() {
                         val currentUser = Auth.fbAuth?.currentUser
                         launchApp(currentUser)
                     }else{
-                        println("hubo problemas en el login")
+                        textViewInvalidCredentials.text = "Invalid credentials"
+                        containerLogin.visibility = View.VISIBLE
+                        containerProgress.visibility = View.INVISIBLE
                     }
                 }
-            }else{
-                println("hubo problemas")
-                println(email)
-                println(password)
             }
         }
 
@@ -62,5 +64,19 @@ class LoginScreen : AppCompatActivity() {
             println("usuario nulo wei")
         }
 
+    }
+
+    fun resetErrors(){
+        textViewEmailError.text = ""
+        textViewInvalidCredentials.text = ""
+    }
+
+    fun checkErrors(){
+        resetErrors()
+        if(email.isEmpty()) textViewEmailError.text = "Email can not be empty"
+        else if(!Validate.isEmail(email)) textViewEmailError.text = "Invalid email"
+
+        if(password.isEmpty()) textViewInvalidCredentials.text = "Password can not be empty"
+        else if(!Validate.atLeastOfSize(password, 6)) textViewInvalidCredentials.text = "Invalid password"
     }
 }

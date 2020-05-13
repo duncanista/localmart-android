@@ -92,7 +92,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewLocalMartTitle" />
 
-    <com.google.android.material.textfield.TextInputLayout
+        <LinearLayout
+            android:id="@+id/linearLayout10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="21dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmail">
+
+            <TextView
+                android:id="@+id/textViewEmailError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/design_default_color_error" />
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutEmail"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
@@ -116,30 +136,30 @@
             android:textColorHint="@color/colorGrey" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutPassword"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
-
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="21dp"
-        android:hint="PASSWORD"
-        android:textColorHint="@color/colorGrey"
-        app:boxStrokeColor="@color/colorGrey"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmail"
-        app:passwordToggleEnabled="false">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputPassword"
-            android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutPassword"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:textColorHint="@color/colorGrey" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginStart="21dp"
+
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="21dp"
+            android:hint="PASSWORD"
+            android:textColorHint="@color/colorGrey"
+            app:boxStrokeColor="@color/colorGrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout10"
+            app:passwordToggleEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textColorHint="@color/colorGrey" />
+        </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
         android:id="@+id/rowForgotPassword"
@@ -152,6 +172,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPassword">
+
+        <TextView
+            android:id="@+id/textViewInvalidCredentials"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/design_default_color_error" />
 
         <TextView
             android:id="@+id/textForgotPassword"
