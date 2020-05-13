@@ -9,13 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".login.SignupScreen"/>
+        <activity android:name=".auth.SignupScreen"/>
         <activity android:name=".MainActivity"/>
         <activity android:name=".search.SearchFragment" />
         <activity android:name=".account.AccountFragment" />
         <activity android:name=".product.ProductListScreen" />
         <activity android:name=".categories.CategoriesScreen" />
-        <activity android:name=".login.LoginScreen">
+        <activity android:name=".auth.LoginScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,25 +1,24 @@
-package mx.itesm.localmart.login
+package mx.itesm.localmart.auth
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_login_screen.*
+import kotlinx.android.synthetic.main.activity_signup_screen.*
 import mx.itesm.localmart.MainActivity
 import mx.itesm.localmart.R
 
-class LoginScreen : AppCompatActivity() {
+class SignupScreen : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login_screen)
+        setContentView(R.layout.activity_signup_screen)
 
-        buttonLogin.setOnClickListener{
+        buttonSignUp.setOnClickListener{
             startActivity(Intent(this, MainActivity::class.java))
-            finish()
         }
 
-        textViewCreateAccount.setOnClickListener{
-            startActivity(Intent(this, SignupScreen::class.java))
+        textViewLogIn.setOnClickListener{
+            startActivity(Intent(this, LoginScreen::class.java))
         }
     }
 }

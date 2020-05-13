@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "433981902780-0ej92oj16v6l5281an4063ndr4fppapu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mx.itesm.localmart",
+            "certificate_hash": "8f3f5d2a815145a6ece32ec000b706e6424fdf9a"
+          }
+        },
+        {
           "client_id": "433981902780-2m80ht4ol0dqi55ir0rp09d1h1talfij.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
