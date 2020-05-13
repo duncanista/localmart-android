@@ -1,5 +1,7 @@
 package mx.itesm.localmart.utils
 
+import android.util.Log
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.functions.FirebaseFunctions
@@ -14,31 +16,34 @@ interface idd {
 
 object Api{
     val firestore = FirebaseFirestore.getInstance()
-    val functions = FirebaseFunctions.getInstance()
+    val Functions = FirebaseFunctions.getInstance()
+    var Auth = FirebaseAuth.getInstance()
 
 
     object UserApi {
         // Cloud Functions
-        val addUser = functions.getHttpsCallable("addUser")
-        val updateUser = functions.getHttpsCallable("updateUser")
-        val deleteUser = functions.getHttpsCallable("deleteUser")
+        val addUser = Functions.getHttpsCallable("addUser")
+        val updateUser = Functions.getHttpsCallable("updateUser")
+        val deleteUser = Functions.getHttpsCallable("deleteUser")
         // Cloud Firestore instance
         val users = firestore.collection("users")
 
-        fun create(user: User, password: String): Boolean{
+        fun create(user: User, password: String){
             val email = user.email
-            val data = hashMapOf("email" to email, "password" to password)
-            var result = false
-           addUser.call(data).addOnCompleteListener { userCredentials ->
-                users.document(userCredentials.toString()).set(user).addOnCompleteListener {
-                    if(it.isSuccessful){
-                        result = true
-                    }else{
-                        print("hubo problemas aqui")
+            Auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
+                if(task.isSuccessful){
+                    var uid = Auth.currentUser?.uid.toString()
+                    firestore.collection("users").document(uid).set(user).addOnSuccessListener {
+                        Log.d("TAG", "user created fooooo" + uid)
+
+                    }.addOnFailureListener{e ->
+                        Log.d("ERROR", "wack bro" + e.toString())
                     }
                 }
-           }
-            return result
+
+
+            }
         }
     }
 }
+

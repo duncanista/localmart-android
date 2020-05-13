@@ -29,7 +29,8 @@ class LoginScreen : AppCompatActivity() {
         buttonLogin.setOnClickListener {
             email = textInputEmail.text.toString()
             password = textInputPassword.text.toString()
-            if(Auth.checkLogInFields(email, password)){
+            if(!Auth.checkLogInFields(email, password)){
+
                 containerLogin.visibility = View.INVISIBLE
                 containerProgress.visibility = View.VISIBLE
 

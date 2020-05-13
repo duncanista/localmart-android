@@ -3,13 +3,16 @@ package mx.itesm.localmart.auth
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_signup_screen.*
 import mx.itesm.localmart.MainActivity
 import mx.itesm.localmart.R
+import mx.itesm.localmart.utils.Api
 import mx.itesm.localmart.utils.User
 import mx.itesm.localmart.utils.Api.UserApi
+import mx.itesm.localmart.utils.Validation
 
 class SignupScreen : AppCompatActivity() {
 
@@ -34,25 +37,33 @@ class SignupScreen : AppCompatActivity() {
             email = textInputEmail.text.toString()
             password = textInputPassword.text.toString()
             confirmPassword = textInputConfirmPassword.text.toString()
-            nameInput = textInputConfirmPassword.text.toString()
-            print(email)
-            print(password)
-            print(confirmPassword)
-            print(nameInput)
-            if(Auth.checkSignUpFields(email, password, confirmPassword, phone, nameInput)){
-                //containerSignUp.visibility = View.INVISIBLE
-                //containerProgress.visibility = View.VISIBLE
-                val fullname = nameInput.split(" ")
+            nameInput = textInputName.text.toString()
+            phone = textInputPhone.text.toString()
+
+            if(!Auth.checkSignUpFields(email, password, confirmPassword, nameInput, phone)){
+                containerSignUp.visibility = View.INVISIBLE
+                containerProgress.visibility = View.VISIBLE
+                val fullname = nameInput.split(" ").toTypedArray()
                 val name = fullname[0]
                 val lastname = fullname[1]
                 val communities = listOf<String>()
                 val user = User(name=name, lastname=lastname, email=email, admin=false, communities=communities)
-                print(name)
-                print(lastname)
-                /*if(UserApi.create(user, password)){
-                    val currentUser = Auth.fbAuth?.currentUser
-                    launchApp(currentUser)
-                }*/
+                val email = user.email
+
+                Api.Auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
+                    if(task.isSuccessful) {
+                        var uid = Api.Auth.currentUser?.uid.toString()
+                        println(uid)
+                        val currentUser = Auth.fbAuth?.currentUser
+                        Log.d("USER", uid)
+                        launchApp(currentUser)
+                    }
+                }
+
+
+
+            }else{
+                println("no jala tu porkeria")
             }
         }
 
@@ -70,3 +81,21 @@ class SignupScreen : AppCompatActivity() {
         }
     }
 }
+
+/*
+var data = hashMapOf(
+                            "name" to name,
+                            "lastname" to lastname,
+                            "phone" to phone,
+                            "email" to email,
+                            "communities" to communities
+                        )
+                        Api.firestore.collection("users").document(uid).set(data).addOnSuccessListener {
+                            Log.d("TAG", "user created fooooo" + uid)
+                            val currentUser = Auth.fbAuth?.currentUser
+                            launchApp(currentUser)
+
+                        }.addOnFailureListener{e ->
+                            Log.d("ERROR", "wack bro" + e.toString())
+                        }
+* */
