@@ -40,6 +40,10 @@ class HomeFragment : Fragment() {
 
         prefs = activity?.getSharedPreferences("pref", Context.MODE_PRIVATE)
         tvUserName.text = prefs?.getString("fullname", "") + "!"
+        if (tvUserName.text == "!"){
+            tvUserName.text = ""
+            tvWelcome.text = "Welcome!"
+        }
 
 
         buttonLogout.setOnClickListener(View.OnClickListener {
