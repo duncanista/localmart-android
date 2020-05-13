@@ -5,6 +5,7 @@ import android.graphics.Bitmap
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.firebase.storage.FirebaseStorage
@@ -41,7 +42,9 @@ class ProductAdapter (private val context: Context, var arrProducts: Array<Produ
         val product = arrProducts[position]
         holder.rowView.tvProductListName.text = "${product.name}"
         holder.rowView.tvPrice.text = "${product.price}"
-
+        holder.rowView.setOnClickListener{
+            Toast.makeText(context, "CLICKASTE ${product.name}", Toast.LENGTH_SHORT)
+        }
 
         println(product.imageUri)
         val gsReference = storage.getReferenceFromUrl(product.imageUri)

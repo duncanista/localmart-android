@@ -1,5 +1,7 @@
 package mx.itesm.localmart.utils
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -27,6 +29,7 @@ object Api{
         val deleteUser = Functions.getHttpsCallable("deleteUser")
         // Cloud Firestore instance
         val users = firestore.collection("users")
+
 
         fun create(user: User, password: String){
             val email = user.email

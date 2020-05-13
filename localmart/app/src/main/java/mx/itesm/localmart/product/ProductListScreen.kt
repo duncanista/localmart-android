@@ -35,11 +35,7 @@ class ProductListScreen : AppCompatActivity() {
         super.onStart()
         getProducts()
 
-
-
 }
-
-
     private fun getProducts() {
 
         var firestore = FirebaseFirestore.getInstance()
