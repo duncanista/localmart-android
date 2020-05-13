@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_search.*
 import mx.itesm.localmart.R
 import mx.itesm.localmart.categories.CategoriesScreen
@@ -26,8 +27,8 @@ class SearchFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        activity?.toolbar?.title = "Search"
         // Inflate the layout for this fragment
-
         return inflater.inflate(R.layout.fragment_search, container, false)
     }
 

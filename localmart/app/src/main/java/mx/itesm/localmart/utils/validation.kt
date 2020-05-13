@@ -7,8 +7,8 @@ class Validation {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 
-    fun atLeastOfSize6(toCheck: String) : Boolean {
-        return toCheck.length >= 6
+    fun atLeastOfSize(toCheck: String, size: Int) : Boolean {
+        return toCheck.length >= size
     }
 
     fun isPhone(phone: String): Boolean {

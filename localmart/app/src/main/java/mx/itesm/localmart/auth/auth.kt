@@ -11,13 +11,13 @@ class Auth{
     private val Validate: Validation = Validation()
 
     fun checkLogInFields(email: String, password: String): Boolean{
-        return (email.isEmpty() || password.isEmpty() || !Validate.atLeastOfSize6(password) || !Validate.isEmail(email))
+        return (email.isEmpty() || password.isEmpty() || !Validate.atLeastOfSize(password, 6) || !Validate.isEmail(email))
     }
 
     fun checkSignUpFields(email: String, password: String, confirmPassword: String, name: String, phone: String): Boolean{
         return (email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty() || name.isEmpty() || phone.isEmpty()
-                || !Validate.atLeastOfSize6(password) || !Validate.isEmail(email) || !Validate.isPhone(phone)  || !Validate.nameContainsLastname(name)
-                || !checkPasswords(password, confirmPassword))
+                || !Validate.atLeastOfSize(password, 6) || !Validate.isEmail(email) || !Validate.isPhone(phone)  || !Validate.nameContainsLastname(name)
+                || !checkPasswords(password, confirmPassword) || !Validate.atLeastOfSize(phone, 8))
     }
 
     fun checkPasswords(password: String, confirmPassword: String): Boolean{
