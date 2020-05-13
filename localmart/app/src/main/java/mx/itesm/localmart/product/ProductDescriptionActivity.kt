@@ -33,13 +33,15 @@ class ProductDescriptionActivity : AppCompatActivity() {
         tvDescription.text = product?.description
         tvPrice.text = product?.price
 
-        val gsReference = storage.getReferenceFromUrl(product!!.imageUri)
-        gsReference.downloadUrl.addOnCompleteListener{Uri->
-            val imgUrl = Uri.toString()
-            val imgView = imgProduct
-            Glide.with(this)
-                .load(imgUrl)
-                .into(imgView)
+        if (product!!.imageUri != "no image") {
+            val gsReference = storage.getReferenceFromUrl(product!!.imageUri)
+            gsReference.downloadUrl.addOnCompleteListener { Uri ->
+                val imgUrl = Uri.toString()
+                val imgView = imgProduct
+                Glide.with(this)
+                    .load(imgUrl)
+                    .into(imgView)
+            }
         }
 
         firestore.collection("users").document(product?.seller).get()

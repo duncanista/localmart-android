@@ -47,13 +47,15 @@ class ProductAdapter (private val context: Context, var arrProducts: Array<Produ
         }
 
         println(product.imageUri)
-        val gsReference = storage.getReferenceFromUrl(product.imageUri)
-        gsReference.downloadUrl.addOnCompleteListener{Uri->
-            val imgUrl = Uri.toString()
-            val imgView = holder.rowView.imgProduct
-            Glide.with(holder.rowView)
-                .load(imgUrl)
-                .into(imgView)
+        if (product.imageUri != "no image") {
+            val gsReference = storage.getReferenceFromUrl(product.imageUri)
+            gsReference.downloadUrl.addOnCompleteListener { Uri ->
+                val imgUrl = Uri.toString()
+                val imgView = holder.rowView.imgProduct
+                Glide.with(holder.rowView)
+                    .load(imgUrl)
+                    .into(imgView)
+            }
         }
 
         holder.rowView.setOnClickListener{
