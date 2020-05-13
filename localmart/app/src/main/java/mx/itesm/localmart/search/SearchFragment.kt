@@ -38,7 +38,7 @@ class SearchFragment : Fragment() {
             startActivity(
                 Intent(
                     activity,
-                    AddProductActivity::class.java
+                    CategoriesScreen::class.java
                     //CategoriesScreen::class.java
                 )
             )

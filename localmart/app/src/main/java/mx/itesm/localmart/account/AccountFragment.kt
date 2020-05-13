@@ -1,6 +1,7 @@
 package mx.itesm.localmart.account
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,8 +15,11 @@ import androidx.navigation.Navigation
 import androidx.preference.PreferenceManager
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_account.*
+import kotlinx.android.synthetic.main.fragment_search.*
 
 import mx.itesm.localmart.R
+import mx.itesm.localmart.product.AddProductActivity
+import mx.itesm.localmart.product.ProductListScreen
 
 class AccountFragment : Fragment(), View.OnClickListener {
 
@@ -44,6 +48,18 @@ class AccountFragment : Fragment(), View.OnClickListener {
         textViewUserFullname.text = prefs?.getString("fullname", "")
         view.findViewById<LinearLayout>(R.id.linearLayoutUserProfile).setOnClickListener(this)
         view.findViewById<Button>(R.id.buttonAccountInformation).setOnClickListener(this)
+
+        //TODO cambiar a fragment
+        btnAddProduct.setOnClickListener{
+            startActivity(
+                Intent(
+                    activity,
+                    AddProductActivity::class.java
+                )
+            )
+
+        }
+
     }
 
     override fun onClick(v: View?) {
