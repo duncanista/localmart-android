@@ -56,6 +56,11 @@ class ProductAdapter (private val context: Context, var arrProducts: Array<Produ
                 .into(imgView)
         }
 
+        holder.rowView.setOnClickListener{
+            listener?.itemClicked(position)
+        }
+
     }
+
 
 }

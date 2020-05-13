@@ -75,38 +75,6 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:layout_weight="0"
-            android:text="Storage"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="#003FFF"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:id="@+id/detailSelect"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/rb64"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight=".5"
-                android:checked="true"
-                android:text="64 GB" />
-
-            <RadioButton
-                android:id="@+id/rb256"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight=".5"
-                android:text="256 GB" />
-
-        </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
