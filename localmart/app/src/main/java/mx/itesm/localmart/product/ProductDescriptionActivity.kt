@@ -44,6 +44,8 @@ class ProductDescriptionActivity : AppCompatActivity() {
                     .load(imgUrl)
                     .into(imgView)
             }
+        } else {
+            imgProduct.setImageResource(R.drawable.no_image)
         }
 
         firestore.collection("users").document(product?.seller).get()
