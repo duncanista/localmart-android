@@ -49,7 +49,7 @@ class ProductAdapter (private val context: Context, var arrProducts: Array<Produ
         println(product.imageUri)
         if (product.imageUri != "no image") {
             val gsReference = storage.getReferenceFromUrl(product.imageUri)
-            gsReference.downloadUrl.addOnCompleteListener { Uri ->
+            gsReference.downloadUrl.addOnSuccessListener { Uri ->
                 val imgUrl = Uri.toString()
                 val imgView = holder.rowView.imgProduct
                 Glide.with(holder.rowView)
