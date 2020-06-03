@@ -25,6 +25,7 @@ class ProductListScreen : AppCompatActivity(), ListenerRecycler {
     var productAdapter: ProductAdapter? = null
     val array = mutableListOf<Product>()
     var selectedCategory: String = ""
+    var searchValue: String = ""
 
 
 
@@ -35,6 +36,7 @@ class ProductListScreen : AppCompatActivity(), ListenerRecycler {
         setContentView(R.layout.activity_product_list_screen)
 
         selectedCategory = intent.getStringExtra("Category")
+        searchValue = intent.getStringExtra("Search")
         tvSelectedCategory.text = selectedCategory
 
     }
@@ -62,9 +64,12 @@ class ProductListScreen : AppCompatActivity(), ListenerRecycler {
                             val price = "$ %.2f".format(document.data["price"].toString().toDouble())
                             val category = document.data["category"].toString()
                             var product = Product(name, price, image, description, seller, sold, category)
-                            if (category == selectedCategory) {array.add(product)}
+                            if ((category == selectedCategory || selectedCategory == "All") &&
+                                (searchValue == "" || searchValue.toLowerCase().replace("\\s".toRegex(), "") in name.toLowerCase().replace("\\s".toRegex(), "")))
+                            {array.add(product)}
                         }
-                    configureRecycler()
+
+                        configureRecycler()
 
                     }
                 }

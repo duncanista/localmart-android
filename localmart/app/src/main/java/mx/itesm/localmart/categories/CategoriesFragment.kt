@@ -1,6 +1,5 @@
 package mx.itesm.localmart.categories
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,11 +8,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.activity_categories_screen.*
+import kotlinx.android.synthetic.main.activity_categories_screen.recyclerCategory
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_categories.*
 import mx.itesm.localmart.ListenerRecycler
 import mx.itesm.localmart.R
-import mx.itesm.localmart.product.ProductDescriptionActivity
 import mx.itesm.localmart.product.ProductListScreen
 
 
@@ -48,6 +47,18 @@ class CategoriesFragment : Fragment(), ListenerRecycler {
 
         val divisor = DividerItemDecoration(activity, layout.orientation)
         recyclerCategory.addItemDecoration(divisor)
+
+        btnSearch.setOnClickListener(View.OnClickListener {
+            val searchValue = etSearchProduct.text.toString()
+            if (searchValue != ""){
+                val intProductList = Intent(activity, ProductListScreen::class.java)
+                intProductList.putExtra("Search", searchValue)
+                intProductList.putExtra("Category", "All")
+                startActivity(intProductList)
+            }
+
+            etSearchProduct.setText("")
+        })
     }
 
 
@@ -58,7 +69,11 @@ class CategoriesFragment : Fragment(), ListenerRecycler {
         val intProductList = Intent(activity, ProductListScreen::class.java)
         val clickedCategory = Category.arrCategories[position].name
         intProductList.putExtra("Category", clickedCategory)
+        val searchValue = etSearchProduct.text.toString()
+        intProductList.putExtra("Search", searchValue)
         startActivity(intProductList)
     }
+
+
 
 }

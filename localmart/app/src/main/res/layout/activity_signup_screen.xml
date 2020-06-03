@@ -229,6 +229,7 @@
                 android:id="@+id/textInputEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="textWebEmailAddress"
                 android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -251,6 +252,7 @@
                 android:id="@+id/textInputPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="phone"
                 android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -273,6 +275,7 @@
                 android:id="@+id/textInputPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="textWebPassword"
                 android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -295,6 +298,7 @@
                 android:id="@+id/textInputConfirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="textWebPassword"
                 android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
