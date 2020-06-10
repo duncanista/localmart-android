@@ -63,7 +63,7 @@ class ProductListScreen : AppCompatActivity(), ListenerRecycler {
                             val sold = document.data["sold"].toString().toBoolean()
                             val price = "$ %.2f".format(document.data["price"].toString().toDouble())
                             val category = document.data["category"].toString()
-                            var product = Product(name, price, image, description, seller, sold, category)
+                            var product = Product(name, price, image, description, seller, sold, category, document.id)
                             if ((category == selectedCategory || selectedCategory == "All") &&
                                 (searchValue == "" || searchValue.toLowerCase().replace("\\s".toRegex(), "") in name.toLowerCase().replace("\\s".toRegex(), "")))
                             {array.add(product)}

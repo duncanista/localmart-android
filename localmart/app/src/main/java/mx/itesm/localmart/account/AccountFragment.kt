@@ -20,6 +20,7 @@ import kotlinx.android.synthetic.main.fragment_search.*
 import mx.itesm.localmart.R
 import mx.itesm.localmart.product.AddProductActivity
 import mx.itesm.localmart.product.ProductListScreen
+import mx.itesm.localmart.product.YourProductsActivity
 
 class AccountFragment : Fragment(), View.OnClickListener {
 
@@ -59,6 +60,17 @@ class AccountFragment : Fragment(), View.OnClickListener {
             )
 
         }
+
+        btnYourProducts.setOnClickListener {
+            startActivity(
+                Intent(
+                    activity,
+                    YourProductsActivity::class.java
+                )
+            )
+        }
+
+
 
     }
 

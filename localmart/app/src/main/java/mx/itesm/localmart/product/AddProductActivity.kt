@@ -73,20 +73,27 @@ class AddProductActivity : AppCompatActivity() {
             val userUid = currentUser?.uid!!
             val productName = etName.text.toString()
             val productDescription = etDescription.text.toString()
-            val price = etPrice.text.toString().toFloat()
+            val price = etPrice.text.toString()
             val category = spinnerCategories.selectedItem.toString()
 
             val imageUri = uploadImage()
-            val newProduct = NewProduct(userUid, productName, productDescription, false, imageUri, price, category)
 
-            firestore.collection("products")
-                .add(newProduct)
-                .addOnSuccessListener { uid ->
+            if (productName != "" && productDescription != "" && price != "") {
+                val newProduct = NewProduct(userUid, productName, productDescription, false, imageUri, price.toFloat(), category)
 
-                }
-                .addOnFailureListener { e ->
+                firestore.collection("products")
+                    .add(newProduct)
+                    .addOnSuccessListener { uid ->
 
-                }
+                    }
+                    .addOnFailureListener { e ->
+
+                    }
+                finish();
+            } else {
+                Toast.makeText(applicationContext, "Fill in all fields", Toast.LENGTH_LONG).show()
+
+            }
 
         }
 

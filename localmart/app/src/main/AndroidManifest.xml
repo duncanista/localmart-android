@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".auth.ForgotPasswordScreen"></activity>
+        <activity android:name=".product.YourProductsActivity"></activity>
+        <activity android:name=".auth.ForgotPasswordScreen" />
         <activity android:name=".product.ProductDescriptionActivity" />
         <activity android:name=".account.helplegal.HelpLegalScreen" />
         <activity android:name=".auth.SignupScreen" />
