@@ -54,7 +54,8 @@ class HomeFragment : Fragment() {
         Auth.fbAuth?.addAuthStateListener {
             if(Auth.fbAuth?.currentUser == null){
                 startActivity(Intent(activity, LoginScreen::class.java))
-                activity?.finish()
+                //activity?.finish()
+
             }
         }
     }
