@@ -40,7 +40,7 @@ class HomeFragment : Fragment() {
 
         prefs = activity?.getSharedPreferences("pref", Context.MODE_PRIVATE)
         tvUserName.text = prefs?.getString("fullname", "") + "!"
-        if (tvUserName.text == "!"){
+        if (tvUserName.text == "!") {
             tvUserName.text = ""
             tvWelcome.text = "Welcome!"
         }
@@ -48,16 +48,10 @@ class HomeFragment : Fragment() {
 
         buttonLogout.setOnClickListener(View.OnClickListener {
             signOut()
+            startActivity(Intent(activity, LoginScreen::class.java))
+            activity?.finish()
         })
-
-
-        Auth.fbAuth?.addAuthStateListener {
-            if(Auth.fbAuth?.currentUser == null){
-                startActivity(Intent(activity, LoginScreen::class.java))
-                activity?.finish()
-
-            }
-        }
+        
     }
 
     private fun signOut(){
