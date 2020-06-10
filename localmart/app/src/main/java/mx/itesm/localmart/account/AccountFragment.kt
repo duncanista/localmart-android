@@ -50,25 +50,6 @@ class AccountFragment : Fragment(), View.OnClickListener {
         view.findViewById<LinearLayout>(R.id.linearLayoutUserProfile).setOnClickListener(this)
         view.findViewById<Button>(R.id.buttonAccountInformation).setOnClickListener(this)
 
-        //TODO cambiar a fragment
-        btnAddProduct.setOnClickListener{
-            startActivity(
-                Intent(
-                    activity,
-                    AddProductActivity::class.java
-                )
-            )
-
-        }
-
-        btnYourProducts.setOnClickListener {
-            startActivity(
-                Intent(
-                    activity,
-                    YourProductsActivity::class.java
-                )
-            )
-        }
 
 
 

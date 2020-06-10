@@ -17,6 +17,8 @@ import mx.itesm.localmart.MainActivity
 import mx.itesm.localmart.R
 import mx.itesm.localmart.auth.Auth
 import mx.itesm.localmart.auth.LoginScreen
+import mx.itesm.localmart.product.AddProductActivity
+import mx.itesm.localmart.product.YourProductsActivity
 
 class HomeFragment : Fragment() {
     private val Auth: Auth = Auth()
@@ -51,6 +53,25 @@ class HomeFragment : Fragment() {
             startActivity(Intent(activity, LoginScreen::class.java))
             activity?.finish()
         })
+
+        btnAddProduct.setOnClickListener{
+            startActivity(
+                Intent(
+                    activity,
+                    AddProductActivity::class.java
+                )
+            )
+
+        }
+
+        btnYourProducts.setOnClickListener {
+            startActivity(
+                Intent(
+                    activity,
+                    YourProductsActivity::class.java
+                )
+            )
+        }
         
     }
 

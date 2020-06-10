@@ -118,23 +118,17 @@ class AddProductActivity : AppCompatActivity() {
 
     private fun uploadImage(): String{
         if (filepath != null){
-            val progressDialog = ProgressDialog(this)
-            progressDialog.setTitle("Uploading...")
-            progressDialog.show()
 
             val imageRef = storageReference!!.child("productImages/" + UUID.randomUUID().toString())
             imageRef.putFile(filepath!!)
                 .addOnSuccessListener {
-                    progressDialog.dismiss()
                     Toast.makeText(applicationContext, "File uploaded", Toast.LENGTH_LONG).show()
                 }
                 .addOnFailureListener{
-                    progressDialog.dismiss()
                     Toast.makeText(applicationContext, "Failed to upload", Toast.LENGTH_LONG).show()
                 }
                 .addOnProgressListener {taskSnapShot->
                     val progress = 100.0 * taskSnapShot.bytesTransferred/taskSnapShot.totalByteCount
-                    progressDialog.setMessage("Uploaded " + progress.toInt()+"%...")
                 }
             return imageRef.toString()
         }

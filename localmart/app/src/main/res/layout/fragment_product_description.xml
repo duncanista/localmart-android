@@ -55,7 +55,7 @@
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="25dp"
-            android:text="Decription"
+            android:text="Description"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="#003FFF"
             android:textStyle="bold" />
