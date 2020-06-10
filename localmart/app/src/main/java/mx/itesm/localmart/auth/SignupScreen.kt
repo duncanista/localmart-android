@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.navigation.findNavController
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_signup_screen.*
@@ -73,7 +74,7 @@ class SignupScreen : AppCompatActivity() {
         }
 
         textViewLogIn.setOnClickListener{
-            startActivity(Intent(this, LoginScreen::class.java))
+            finish()
         }
     }
 

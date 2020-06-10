@@ -78,6 +78,10 @@ class LoginScreen : AppCompatActivity() {
             }
         }
 
+        textForgotPassword.setOnClickListener{
+            startActivity(Intent(this, ForgotPasswordScreen::class.java))
+        }
+
         textViewCreateAccount.setOnClickListener{
             startActivity(Intent(this, SignupScreen::class.java))
         }
